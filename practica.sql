@@ -11,10 +11,19 @@ SELECT MOVIE_TITLE, MPAA_RATING_CODE FROM `MOVIE` WHERE `MPAA_RATING_CODE` = 'PG
 ---Incluir clasificación (MPAA_RATING_CODE) y título de la película. 
 SELECT MOVIE_TITLE, MPAA_RATING_CODE FROM `MOVIE` WHERE `MPAA_RATING_CODE` != 'PG-13';
 
-3. Lista de películas en DVD con precio menor a 19.99, ordenada en orden descendente por precio. Incluir el precio de DVD (RETAIL_PRICE_DVD) y título 
-de la película. 
-4. Lista de películas en DVD con precio DVD con precio de 19.99 o menos, en orden descendente por precio. Incluir el precio de DVD (RETAIL_PRICE_DVD) 
-y título de la película. 
+--3. Lista de películas en DVD con precio menor a 19.99, 
+--ordenada en orden descendente por precio. Incluir el precio de DVD (RETAIL_PRICE_DVD) 
+--y título de la película. 
+
+SELECT RETAIL_PRICE_DVD, MOVIE_TITLE from  MOVIE where RETAIL_PRICE_DVD < '19.99' order by RETAIL_PRICE_DVD DESC;
+
+
+--4. Lista de películas en DVD con precio DVD con precio de 19.99 o menos, 
+--en orden descendente por precio. Incluir el precio de DVD (RETAIL_PRICE_DVD) 
+--y título de la película. 
+SELECT RETAIL_PRICE_DVD, MOVIE_TITLE from  MOVIE where RETAIL_PRICE_DVD <= '19.99' order by RETAIL_PRICE_DVD DESC;
+
+
 5. Lista de todas las películas en DVD con precio de 25.00 o más, ordenado en forma ascendente por precio. Incluir el precio de DVD (RETAIL_PRICE_DVD) 
 y título de la película. 
 6. Lista de las películas con clasificación PG-13 y que tienen un precio de DVD de 19.99 o menos, ordenadas en forma ascendente por precio. La lista debe 
